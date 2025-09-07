@@ -1,28 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableHighlight, Image, Button, Alert } from 'react-native';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import React from 'react';
+import { View } from 'react-native';
 
 export default function App() {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={styles.container} edges={['top', 'left', 'right']}>
-       <Button 
-       title="Press me"
-       onPress={() => Alert.alert("My title", "My message", [
-         {text: 'Yes', onPress: () => console.log('Yes Pressed')},
-         {text: 'No', onPress: () => console.log('No Pressed')}
-       ])}
-       />
-      </SafeAreaView>
-    </SafeAreaProvider>
+      <View style={{
+        backgroundColor: '#fff',
+        flex: 1,
+        flexDirection: 'row',
+      }}>
+        <View
+          style={{
+            backgroundColor: 'dodgerblue',
+            height: 100,
+            width: 100, 
+          }}
+        />
+        <View
+          style={{
+            backgroundColor: 'gold',
+            height: 100,
+            width: 100,
+          }}
+        />
+        <View
+          style={{
+            backgroundColor: 'tomato',
+            height: 100,
+            width: 100,
+          }}
+        />
+      </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
+
+
